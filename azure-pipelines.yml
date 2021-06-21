@@ -15,7 +15,7 @@ variables:
   webAppName: 'Back-office-operations'
 
   # Environment name
-  environmentName: 'Back-office-operations'
+  environmentName: 'Backoffice'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
