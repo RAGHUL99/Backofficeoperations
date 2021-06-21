@@ -17,5 +17,14 @@ steps:
 
 - script: |
     npm install
-    npm start
+    node app.js
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(4d029bf0-fbdb-432f-bacb-0ea4e717740c)'
+    appType: 'webApp'
+    WebAppName: 'Back-office'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    enableCustomDeployment: true
+    DeploymentType: 'webDeploy'
   displayName: 'npm install and build'
