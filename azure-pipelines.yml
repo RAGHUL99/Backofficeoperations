@@ -9,10 +9,10 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '1fccd57f-aff4-4cc8-a709-c256a4641e1b'
+  azureSubscription: '4d029bf0-fbdb-432f-bacb-0ea4e717740c'
 
   # Web app name
-  webAppName: 'Back-office-operations'
+  webAppName: 'rahuldevops'
 
   # Environment name
   environmentName: 'Backoffice'
@@ -38,7 +38,6 @@ stages:
     - script: |
         npm install
         npm run build --if-present
-        node app.js
         
       displayName: 'npm install, build and test'
 
@@ -69,7 +68,7 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: Back-office-operations'
+            displayName: 'Azure Web App Deploy: rahuldevops'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
